@@ -13,32 +13,17 @@ import javafx.stage.Stage;
 public class ExStackPane extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		try {
-			// criar botoes
-			Button btn1 = new Button("Botão 1");
-			Button btn2 = new Button("Botão 2"); // button
-			Button btn3 = new Button("Botão 3"); // left
-			Button btn4 = new Button("Botão 4"); //right
-			Button btn5 = new Button("Botão 5"); //center
-			Button btn6 = new Button("Botão 6");
 			
 			Label titulo = new Label();
 			
 			// criar border pane e adicionar botoes
             StackPane stack = new StackPane();
-            Rectangle retangulo = new Rectangle(100, 100, Color.BLUE); 
-            Label texto = new Label("Olá, StackPane!");
-            stack.getChildren().addAll(retangulo, texto);
+            // Rectangle retangulo = new Rectangle(100, 100, Color.GREEN); 
+            Label texto = new Label("Olá, esta tela utiliza StackPane!\n" + "O StackPane é uma interface gráfica e atua como um Gerenciador de Layouts.\n" + "Um layout pode ser entendido como a forma que elementos são organizados em um espaço");
+            stack.getChildren().addAll(texto);
 
             // 4. Criar a cena com o StackPane
-            Scene scene = new Scene(stack, 300, 250);
-
-
-
-			// criar scene
-			
-			// criar espaçamento entre linhas e colunas
-//			gridPane.setHgap(10);
-//			gridPane.setVgap(10);
+            Scene scene = new Scene(stack, 400, 400);
 			
 			//criar stage
 			primaryStage.setScene(scene);
