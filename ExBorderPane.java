@@ -35,7 +35,7 @@ public class ExBorderPane extends Application {
 			Text dsk = new Text("Área de Trabalho");	
 			
 			//barra status
-			Label barra = new Label();
+			ProgressBar barra = new ProgressBar(0.5); 
 			
 			borderpane.setTop(tb);
 			borderpane.setCenter(dsk);
