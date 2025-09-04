@@ -3,7 +3,11 @@ package application;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ToolBar;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class ExBorderPane extends Application {
@@ -11,23 +15,33 @@ public class ExBorderPane extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
-			// criar botoes
-			Button btn1 = new Button("Botão 1");
-			Button btn2 = new Button("Botão 2"); // button
-			Button btn3 = new Button("Botão 3"); // left
-			Button btn4 = new Button("Botão 4"); //right
-			Button btn5 = new Button("Botão 5"); //center
-			Button btn6 = new Button("Botão 6");
+			// toolbar topo 
+			ToolBar tb = new ToolBar(new Text("TOPO TELA"));
 			
-			// criar border pane e adicionar botoes
+			// menu
+			VBox menu = new VBox(15);
+			menu.getChildren().addAll(
+			new Button("Botão 1"),
+			new Button("Botão 2"),
+			new Button("Botão 3"),
+			new Button("Botão 4") 
+            );
+			
+			// criar border pane e adicionar botoes - esquerda 
 			BorderPane borderpane = new BorderPane();
+			borderpane.setLeft(menu);
+						
+			// criardesktop
+			Text dsk = new Text("Área de Trabalho");	
 			
-			borderpane.setTop(btn1);
-			borderpane.setBottom(btn2);
-			borderpane.setLeft(btn3);
-			borderpane.setRight(btn4);
-			borderpane.setCenter(btn5);
+			//barra status
+			Label barra = new Label();
+			
+			borderpane.setTop(tb);
+			borderpane.setCenter(dsk);
+			borderpane.setBottom(barra);
 
+			
 
 
 			// criar scene
